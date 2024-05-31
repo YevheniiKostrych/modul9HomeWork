@@ -38,10 +38,11 @@ public class MyArrayList <T> {
 
 
         int oldCapacity=DEFAULT_CAPACITY;
+
         if (size == elementData.length){
             oldCapacity= (int) (oldCapacity*1.5);
-            Object []newElementData= Arrays.copyOf(elementData,oldCapacity);
-        newElementData[size++]=t;
+           elementData= Arrays.copyOf(elementData,oldCapacity);
+        elementData[size++]=t;
         }
         else
             elementData[size++]=t;
