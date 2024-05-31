@@ -1,10 +1,9 @@
 package modul9.myArrayList;
 
 
+import java.util.Arrays;
 
-
-
-public class MyArrayList  {
+public class MyArrayList <T> {
 
     private Object[] elementData;
     private static final int DEFAULT_CAPACITY = 10;
@@ -35,15 +34,17 @@ public class MyArrayList  {
 
 
 
-    public void add(Object o) {
+    public void add(T t) {
 
 
-
+        int oldCapacity=DEFAULT_CAPACITY;
         if (size == elementData.length){
-            System.out.println(-1);
+            oldCapacity= (int) (oldCapacity*1.5);
+            Object []newElementData= Arrays.copyOf(elementData,oldCapacity);
+        newElementData[size++]=t;
         }
-
-        elementData[size++] = o;
+        else
+            elementData[size++]=t;
 
 
     }
