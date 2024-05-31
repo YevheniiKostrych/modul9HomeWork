@@ -40,8 +40,8 @@ public class MyArrayList <T> {
         int oldCapacity=DEFAULT_CAPACITY;
 
         if (size == elementData.length){
-            oldCapacity= (int) (oldCapacity*1.5);
-           elementData= Arrays.copyOf(elementData,oldCapacity);
+           int newCapacity= (int) (oldCapacity*1.5);
+           elementData= Arrays.copyOf(elementData,newCapacity);
         elementData[size++]=t;
         }
         else
