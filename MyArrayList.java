@@ -14,23 +14,7 @@ public class MyArrayList <T> {
         size = 0;
     }
 
-    public String toString() {
-         StringBuilder sb = new StringBuilder();
 
-        sb.append("[");
-        for (int i = 0; i < elementData.length; i++) {
-            sb.append(elementData[i]);
-            if (i + 1 < elementData.length&&elementData[i+1]!=null) {
-                sb.append(",");
-            }
-            if (elementData[i+1]==null) {
-                sb.append("]");
-                return sb.toString();
-            }
-        }
-        sb.append("]");
-        return sb.toString();
-    }
 
 
 
@@ -76,6 +60,23 @@ public class MyArrayList <T> {
             }
             return elementData[index];
         }
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("[");
+        for (int i = 0; i < elementData.length; i++) {
+            sb.append(elementData[i]);
+            if (i + 1 < elementData.length&&elementData[i+1]!=null) {
+                sb.append(",");
+            }
+            if (elementData[i+1]==null) {
+                sb.append("]");
+                return sb.toString();
+            }
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 
 
     }
