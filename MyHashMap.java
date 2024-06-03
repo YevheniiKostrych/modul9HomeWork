@@ -4,7 +4,6 @@ import java.util.Arrays;
 public class MyHashMap<K,V>{
     private static final int DEFAULT_SIZE=8;
     private int size=0;
-
     private Entry<K,V>[] context=new Entry[DEFAULT_SIZE];
     public void put(K key,V value){
 
@@ -12,9 +11,7 @@ public class MyHashMap<K,V>{
         Entry<K,V>newEntry=new Entry<>(key,value);
         if (context[index]==null){
             context[index]=newEntry;
-
         } else {
-
             Entry<K, V> current = context[index];
             while (current != null) {
                 if (key == null) {
@@ -39,6 +36,9 @@ public class MyHashMap<K,V>{
         Entry<K, V> current = context[index];
 
         while (current != null) {
+            if (key == null) {
+                if (key==null) ;
+                return current.value ;}
             if (current.key.equals(key)) {
                 return current.value;
             }
@@ -46,7 +46,6 @@ public class MyHashMap<K,V>{
         }
         return null;
     }
-
     public void remove(K key){
        int index =calculateIndex(key);
        Entry<K, V> current = context[index];
@@ -54,10 +53,8 @@ public class MyHashMap<K,V>{
        while (current != null) {
            if (current.key.equals(key)) {
                if (previous == null) {
-
                    context[index] = current.next;
                } else {
-
                    previous.next = current.next;
                }
                size--;
@@ -77,7 +74,6 @@ public class MyHashMap<K,V>{
     private int calculateIndex(K key){
         return key == null ? 0 : Math.abs(key.hashCode() % context.length);
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
