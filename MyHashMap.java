@@ -1,12 +1,10 @@
 package modul9.myHashMap;
-
-import java.util.Arrays;
+import java.util.Objects;
 public class MyHashMap<K,V>{
     private static final int DEFAULT_SIZE=8;
     private int size=0;
     private Entry<K,V>[] context=new Entry[DEFAULT_SIZE];
     public void put(K key,V value){
-
         int index=calculateIndex(key);
         Entry<K,V>newEntry=new Entry<>(key,value);
         if (context[index]==null){
@@ -37,7 +35,6 @@ public class MyHashMap<K,V>{
 
         while (current != null) {
             if (key == null) {
-                if (key==null) ;
                 return current.value ;}
             if (current.key.equals(key)) {
                 return current.value;
@@ -51,7 +48,7 @@ public class MyHashMap<K,V>{
        Entry<K, V> current = context[index];
        Entry<K, V> previous = null;
        while (current != null) {
-           if (current.key.equals(key)) {
+           if ((Objects.equals(current.key, key))) {
                if (previous == null) {
                    context[index] = current.next;
                } else {
@@ -102,6 +99,5 @@ public class MyHashMap<K,V>{
             this.value = value;
             this.next = null;
         }
-
     }
 }
