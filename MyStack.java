@@ -1,11 +1,7 @@
-package modul9.myStack;
-
-
+  package modul9.myStack;
 
 public class MyStack  <T> {
-
-
-    transient Node<T> top;
+      transient Node<T> top;
     private int size;
 
     public MyStack() {
@@ -13,18 +9,12 @@ public class MyStack  <T> {
         this.top = null;
         this.size = 0;
     }
-
     private static class Node<T> {
         private T value;
         private Node<T> next;
-
-
-
-
         public Node(T value) {
             this.value = value;
         }
-
         @Override
         public String toString() {
             return "Node{" +
@@ -32,47 +22,34 @@ public class MyStack  <T> {
                     '}';
         }
     }
-
     public void push(T t) {
-
         Node<T> newNode = new Node<>(t);
-
         newNode.next=top;
         top=newNode;
-
         size++;
-
-
-
     }
-    public  Object peek(){
+    public  T peek(){
         if (size == 0) {
             throw new IllegalStateException("Stack is empty");
         }
         return top.value;
-
     }
-    public Object pop(){
+    public T pop(){
         if (size == 0) {
             throw new IllegalStateException("Stack is empty");
         }
-
-
-            Object result= top.value;
+        T result= top.value;
 
             top = top.next;
             size--;
             return result;
         }
-
-    public int size() {
+        public int size() {
         return size;
     }
     public void clear() {
-
         top = null;
         size = 0;
-
     }
     public void remove(int index) {
         if (index < 0 || index >= size) {
@@ -90,13 +67,11 @@ public class MyStack  <T> {
         }
         size--;
     }
-
     @Override
     public String toString() {
         if (size == 0) {
             return "[]";
         }
-
         StringBuilder sb = new StringBuilder("[");
         Node current = top;
         while (current != null) {
