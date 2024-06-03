@@ -13,10 +13,8 @@ public class MyArrayList <T> {
         size = 0;
     }
     public void add(T t) {
-
-        int oldCapacity=DEFAULT_CAPACITY;
-
-        if (size == elementData.length){
+            int oldCapacity=DEFAULT_CAPACITY;
+      if (size == elementData.length){
            int newCapacity= (int) (oldCapacity*1.5);
            elementData= Arrays.copyOf(elementData,newCapacity);
         elementData[size++]=t;
@@ -54,10 +52,10 @@ public class MyArrayList <T> {
         sb.append("[");
         for (int i = 0; i < elementData.length; i++) {
             sb.append(elementData[i]);
-            if (i + 1 < elementData.length&&elementData[i+1]!=null) {
+            if (i + 1< size) {
                 sb.append(",");
             }
-            if (elementData[i+1]==null) {
+            if (i==size-1) {
                 sb.append("]");
                 return sb.toString();
             }
