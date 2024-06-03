@@ -1,25 +1,18 @@
 package modul9.myArrayList;
 
-
 import java.util.Arrays;
 
 public class MyArrayList <T> {
-
-    private Object[] elementData;
     private static final int DEFAULT_CAPACITY = 10;
+    private T[] elementData ;
+
     private int size ;
 
     public MyArrayList() {
-        elementData = new Object[DEFAULT_CAPACITY];
+        elementData = (T[]) new Object[DEFAULT_CAPACITY];
         size = 0;
     }
-
-
-
-
-
     public void add(T t) {
-
 
         int oldCapacity=DEFAULT_CAPACITY;
 
@@ -30,8 +23,6 @@ public class MyArrayList <T> {
         }
         else
             elementData[size++]=t;
-
-
     }
     public void remove(int index) {
         if (index < 0 || index >= size) {
@@ -41,16 +32,13 @@ public class MyArrayList <T> {
             elementData[i]=elementData[i+1];
         }
      elementData[--size]=null;
-
-
     }
     public void clear(){
         for (int i = 0; i < size; i++) {
             elementData[i]=null;
         }
         size=0;
-
-        }
+    }
         public int size(){
         return size;
         }
@@ -77,9 +65,7 @@ public class MyArrayList <T> {
         sb.append("]");
         return sb.toString();
     }
-
-
-    }
+}
 
 
 
