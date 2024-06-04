@@ -1,11 +1,10 @@
   package modul9.myStack;
 
 public class MyStack  <T> {
-      transient Node<T> top;
+    transient Node<T> top;
     private int size;
 
     public MyStack() {
-
         this.top = null;
         this.size = 0;
     }
@@ -39,7 +38,6 @@ public class MyStack  <T> {
             throw new IllegalStateException("Stack is empty");
         }
         T result= top.value;
-
             top = top.next;
             size--;
             return result;
@@ -55,8 +53,7 @@ public class MyStack  <T> {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
-
-        if (index == 0) {
+       if (index == 0) {
             top = top.next;
         } else {
             Node <T>current = top;
