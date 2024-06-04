@@ -28,7 +28,6 @@ public class MyQueue <T> {
                 head = newNode;
                 tail = newNode;
             } else {
-
                 tail.next = newNode;
                 newNode.prev = tail;
                 tail = newNode;
