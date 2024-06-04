@@ -1,13 +1,9 @@
 package modul9.myArrayList;
-
 import java.util.Arrays;
-
 public class MyArrayList <T> {
     private static final int DEFAULT_CAPACITY = 10;
     private T[] elementData ;
-
     private int size ;
-
     public MyArrayList() {
         elementData = (T[]) new Object[DEFAULT_CAPACITY];
         size = 0;
@@ -40,7 +36,7 @@ public class MyArrayList <T> {
         public int size(){
         return size;
         }
-        public Object get(int index){
+        public T get(int index){
             if (index<0||index>=size){
                 throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
             }
@@ -48,7 +44,6 @@ public class MyArrayList <T> {
         }
     public String toString() {
         StringBuilder sb = new StringBuilder();
-
         sb.append("[");
         for (int i = 0; i < elementData.length; i++) {
             sb.append(elementData[i]);
